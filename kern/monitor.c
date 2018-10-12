@@ -72,7 +72,7 @@ mon_backtrace(int argc, char **argv, struct Trapframe *tf)
 			cprintf(" %08d \t",pointer_x[i]);
 			i++;
 		}
-		while(i!=5){
+		while(i<=5){
 			cprintf(" %08d \t",0);
 			i++;
 		}
