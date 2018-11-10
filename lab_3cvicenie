@@ -1,0 +1,71 @@
+trapframe ulozbie registrov stav procesu (preostredie)
+env_link - dalsie volne prostredie
+env_id identifikator prostredia
+env_runable nebezii je pripravene 
+env_running prostredie ktore bez
+nev_not runable nemoze bezat
+dying nezujaima nas
+env_runs ladenie
+env_pgdir kazdy proces vlatny adresny priestor
+ukladanie stranok
+
+uloha 1
+ alokacia vo funkci mem init
+envs = boot_alloc(sizeof(struc Env) *NENV*);
+
+
+
+env_init -incializacia envs
+
+riadok 189 for(i = pdx(utop) : 1023 => makro  )
+e->env_pgdor[i] = jern_pgdir[i];
+utop kopirovanie adrewsneho priestoru
+page2va
+user pgdir kernel pgdir
+va hranica utop - va
+pds makro - index do pgdir 1024 bitov
+ create 
+alokuje nacita binarku load icode
+pocas inicializacie 
+env_pop_tf(e->env_tf)
+nacitane prostredia do pamate
+nacitane binarky na vir. addr 
+vstupny bod , spustenie 
+nacitane binarky load icode
+region alloc alokacia stranok pre prostredia
+end = roundup(va + len, pg_size)
+va = rounddown(va pgsize)
+while va < end
+p = page_alloc
+page_insert(e->env_pgdir,p ,va //permisions user kernel 
+//zvysenie o pgsize
+va = va +pgsize;
+load_icode(
+readseg((uint32_t) ELFHDR, SECTSIZE*8, 0);
+	
+Proghdr *ph *eph
+struct *elf binray
+
+        // is this a valid ELF?
+        if (wlf->e_magic != ELF_MAGIC)
+                goto bad;
+
+        // load each program segment (ignores ph flags)
+        ph = (struct Proghdr *) ((uint8_t *)binary + elf->e_phoff);
+        eph = ph + elf->e_phnu,
+
+        for (; ph < eph; ph++)
+                // p_pa is the load address of this segment (as well
+                // as the physical address)
+                readseg(ph->p_pa, ph->p_memsz, ph->p_offset);
+if(ph-<memsz > ph->p_p_filesz)
+memset(0 +  paramtre  adresa velkost)
+if(page insert ( e->env_pgdir,pp, ustacktop - pgsize ,..))
+	1 = panic ( " nejdp to ")
+
+        // call the entry point from the ELF header
+overenie nejde cez make grade
+        // note: does not return!
+        ((void (*)(void)) (ELFHDR->e_entry))();
+krokovat nastavit brakpoin sys_cputs()
+
